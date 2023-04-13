@@ -35,11 +35,10 @@ class Login extends Component {
     });
     const { nameInput } = this.state;
     const { history } = this.props;
-    const tst = await createUser({ name: nameInput });
-    if (tst) {
+    const response = await createUser({ name: nameInput });
+    if (response) {
       history.push('/search');
     }
-    console.log(tst);
   };
 
   render() {
