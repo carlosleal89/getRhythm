@@ -30,7 +30,6 @@ class Login extends Component {
   };
 
   handleloginBtn = async () => {
-    // e.preventDefault();
     this.setState({
       isLoading: true,
     });
