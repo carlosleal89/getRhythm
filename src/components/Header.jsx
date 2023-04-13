@@ -31,13 +31,11 @@ class Header extends Component {
           <li><Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link></li>
           <li><Link to="/profile" data-testid="link-to-profile">Profile</Link></li>
         </ul>
+        <p>TrybeTunes</p>
         {isLoading ? (
           <Loading />
         ) : (
-          <>
-            <p>TrybeTunes</p>
-            <p data-testid="header-user-name">{ name }</p>
-          </>
+          <p data-testid="header-user-name">{ name }</p>
         )}
       </header>
     );

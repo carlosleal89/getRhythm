@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import './Login.css';
 
 class Login extends Component {
   state = {
@@ -44,11 +45,11 @@ class Login extends Component {
   render() {
     const { nameInput, isDisabled, isLoading } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="login">
         {isLoading ? (
           <Loading />
         ) : (
-          <div>
+          <div className="login-div-class">
             <p>Login</p>
             <form>
               <label htmlFor="">
@@ -62,14 +63,14 @@ class Login extends Component {
                   onChange={ this.handleChange }
                 />
               </label>
-              <button
-                data-testid="login-submit-button"
-                onClick={ () => this.handleloginBtn() }
-                disabled={ isDisabled }
-              >
-                Entrar
-              </button>
             </form>
+            <button
+              data-testid="login-submit-button"
+              onClick={ () => this.handleloginBtn() }
+              disabled={ isDisabled }
+            >
+              Entrar
+            </button>
           </div>
         )}
       </div>

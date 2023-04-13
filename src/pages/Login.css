@@ -1,0 +1,23 @@
+.login {
+  align-items: center;
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+button {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login-div-class {
+  background-color: rgb(183, 228, 199);
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 400px;
+}
+

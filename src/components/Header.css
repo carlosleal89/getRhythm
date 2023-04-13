@@ -1,4 +1,8 @@
 .header-class {
-  background-color: #e0dbdb;
-  height: 150px;
+  align-items: center;
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  padding: 10px;
 }
