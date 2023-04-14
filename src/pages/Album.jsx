@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import AlbunsList from '../components/AlbunsList';
 import MusicCard from '../components/MusicCard';
+import './Album.css';
 
 class Album extends Component {
   state = {
@@ -36,21 +37,23 @@ class Album extends Component {
         <Header />
         <div>
           <h2 data-testid="artist-name">{ artistName }</h2>
-          <div data-testid="album-name">
+          <div data-testid="album-name" className="music-list-div">
             <AlbunsList
               img={ img }
               album={ album }
               artistName={ artistName }
             />
-            {
-              musicList
-                .map((el, index) => index > 0
+            <div className="music-list">
+              {
+                musicList
+                  .map((el, index) => index > 0
                   && <MusicCard
                     key={ index }
                     trackName={ el.trackName }
                     previewUrl={ el.previewUrl }
                   />)
-            }
+              }
+            </div>
           </div>
         </div>
       </div>

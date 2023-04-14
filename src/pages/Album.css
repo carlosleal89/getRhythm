@@ -1,0 +1,9 @@
+.music-list-div {
+  display: flex;
+  justify-content: center;
+}
+
+.music-list {
+  font-size: 0.8em;
+  margin: 0 40px;
+}
