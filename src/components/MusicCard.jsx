@@ -27,9 +27,9 @@ class MusicCard extends Component {
         isLoading: true,
       });
     }
-    const { musicList } = this.props;
+    console.log(this.props);
     if (isFavorite) {
-      await addSong(musicList);
+      await addSong(this.props);
       this.setState({
         isLoading: false,
       });
