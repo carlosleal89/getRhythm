@@ -21,6 +21,7 @@ class Album extends Component {
 
   handleMusicList = async (id) => {
     const musicList = await getMusics(id.id);
+    // console.log(musicList);
     const { artistName, artworkUrl100, collectionName } = musicList[0];
     this.setState({
       img: artworkUrl100,
@@ -51,6 +52,8 @@ class Album extends Component {
                     key={ index }
                     trackName={ el.trackName }
                     previewUrl={ el.previewUrl }
+                    trackId={ el.trackId }
+                    musicList={ musicList }
                   />)
               }
             </div>
