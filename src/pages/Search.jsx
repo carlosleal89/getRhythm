@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
-import Header from '../components/Header';
+import React, { Component } from "react";
+import Header from "../components/Header";
+import searchAlbumsAPI from "../services/searchAlbumsAPI";
+import Loading from "./Loading";
 
 class Search extends Component {
   state = {
-    artistInput: '',
+    artistInput: "",
     isDisabled: true,
+    isLoading: false,
+    artistList: [],
+    showArtistName: false,
+    notFound: false,
+    artistName: "",
   };
 
   handleChange = ({ target: { value, name } }) => {
@@ -12,7 +19,7 @@ class Search extends Component {
       {
         [name]: value,
       },
-      this.handleError,
+      this.handleError
     );
   };
 
@@ -26,34 +33,80 @@ class Search extends Component {
     }
   };
 
-  handleButton = () => {
-    console.log('oi');
+  handleButton = async () => {
+    const { artistInput } = this.state;
+    this.setState({
+      artistName: artistInput,
+      artistInput: "",
+      isLoading: true,
+    });
+    try {
+      const response = await searchAlbumsAPI(artistInput);
+      console.log(response.length);
+      if (response.length === 0) {
+        this.setState({
+          isLoading: false,
+          notFound: true,
+        });
+      } else {
+        this.setState({
+          isLoading: false,
+          artistList: response,
+          showArtistName: true,
+          notFound: false,
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+      this.setState({
+        notFound: true,
+        isLoading: false,
+      });
+    }
   };
 
   render() {
-    const { artistInput, isDisabled } = this.state;
+    const {
+      artistInput,
+      isDisabled,
+      isLoading,
+      artistList,
+      showArtistName,
+      notFound,
+      artistName,
+    } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
-        <form>
-          <label htmlFor="artist-input">
-            <input
-              data-testid="search-artist-input"
-              placeholder="Nome do artista"
-              name="artistInput"
-              id="artist-input"
-              value={ artistInput }
-              onChange={ this.handleChange }
-            />
-          </label>
-        </form>
-        <button
-          data-testid="search-artist-button"
-          onClick={ this.handleButton }
-          disabled={ isDisabled }
-        >
-          Pesquisar
-        </button>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div>
+            <form>
+              <label htmlFor="artist-input">
+                <input
+                  data-testid="search-artist-input"
+                  placeholder="Nome do artista"
+                  name="artistInput"
+                  id="artist-input"
+                  value={artistInput}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </form>
+            <button
+              data-testid="search-artist-button"
+              onClick={this.handleButton}
+              disabled={isDisabled}
+            >
+              Pesquisar
+            </button>
+            {(notFound && <p>Nenhum álbum foi encontrado</p>) ||
+              (showArtistName && (
+                <p>{`Resultado de álbuns de: ${artistName} `}</p>
+              ))}
+          </div>
+        )}
       </div>
     );
   }

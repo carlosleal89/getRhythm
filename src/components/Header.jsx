@@ -35,7 +35,7 @@ class Header extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <p data-testid="header-user-name">{ name }</p>
+          <p data-testid="header-user-name" className="user-name-class">{ name }</p>
         )}
       </header>
     );

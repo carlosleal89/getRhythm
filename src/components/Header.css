@@ -1,8 +1,12 @@
 .header-class {
   align-items: center;
-  background-color: rgb(236, 235, 235);
+  background-color: rgb(183, 228, 199);
   display: flex;
   height: 100px;
   justify-content: space-between;
+  padding: 10px;
+}
+
+.user-name-class {
   padding: 10px;
 }
