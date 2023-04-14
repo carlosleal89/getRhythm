@@ -43,7 +43,13 @@ class Album extends Component {
               artistName={ artistName }
             />
             {
-              musicList.map((el, index) => index > 0 && <MusicCard key={ index } trackName={ el.trackName } previewUrl={ el.previewUrl } />)
+              musicList
+                .map((el, index) => index > 0
+                  && <MusicCard
+                    key={ index }
+                    trackName={ el.trackName }
+                    previewUrl={ el.previewUrl }
+                  />)
             }
           </div>
         </div>
