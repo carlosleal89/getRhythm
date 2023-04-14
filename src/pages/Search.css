@@ -1,0 +1,9 @@
+.albums-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  margin-top: 15px;
+  text-align: center;
+}

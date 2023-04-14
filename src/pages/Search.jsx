@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
 import AlbunsList from '../components/AlbunsList';
+import './Search.css';
 
 class Search extends Component {
   state = {
@@ -82,7 +83,7 @@ class Search extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <div>
+          <div className="search-form">
             <form>
               <label htmlFor="artist-input">
                 <input
@@ -106,20 +107,22 @@ class Search extends Component {
               || (showArtistName && (
                 <div>
                   <p>{`Resultado de álbuns de: ${artistName} `}</p>
-                  {artistList.map((el, index) => (
-                    <div key={ index }>
-                      <Link
-                        to={ `/album/${el.collectionId}` }
-                        data-testid={ `link-to-album-${el.collectionId}` }
-                      >
-                        <AlbunsList
-                          img={ el.artworkUrl100 }
-                          album={ el.collectionName }
-                          artistName={ el.artistName }
-                        />
-                      </Link>
-                    </div>
-                  ))}
+                  <div className="albums-list">
+                    {artistList.map((el, index) => (
+                      <div key={ index }>
+                        <Link
+                          to={ `/album/${el.collectionId}` }
+                          data-testid={ `link-to-album-${el.collectionId}` }
+                        >
+                          <AlbunsList
+                            img={ el.artworkUrl100 }
+                            album={ el.collectionName }
+                            artistName={ el.artistName }
+                          />
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
           </div>

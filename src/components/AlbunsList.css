@@ -1,0 +1,20 @@
+.album-card {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7em;
+  height: 300px;
+  margin: 5px;
+  max-height: 300px;
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.8s ease;
+  width: 200px;
+}
+
+.album-card:hover {
+  transform: scale(1.1);
+}
