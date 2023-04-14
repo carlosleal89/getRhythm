@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import searchAlbumsAPI from "../services/searchAlbumsAPI";
 import Loading from "./Loading";
+import AlbunsList from "../components/AlbunsList";
 
 class Search extends Component {
   state = {
@@ -103,7 +104,18 @@ class Search extends Component {
             </button>
             {(notFound && <p>Nenhum álbum foi encontrado</p>) ||
               (showArtistName && (
-                <p>{`Resultado de álbuns de: ${artistName} `}</p>
+                <div>
+                  <p>{`Resultado de álbuns de: ${artistName} `}</p>
+                  {artistList.map((el, index) => (
+                    <div key={index}>
+                      <AlbunsList
+                        img={el.artworkUrl100}
+                        album={el.collectionName}
+                        artistName={el.artistName}
+                      />
+                    </div>
+                  ))}
+                </div>
               ))}
           </div>
         )}
