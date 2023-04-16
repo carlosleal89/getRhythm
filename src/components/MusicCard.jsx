@@ -7,6 +7,7 @@ class MusicCard extends Component {
   state = {
     isFavorite: false,
     isLoading: false,
+    checked: false,
   };
 
   handleChange = ({ target }) => {
