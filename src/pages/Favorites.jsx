@@ -22,6 +22,17 @@ class Favorites extends Component {
     });
   }
 
+  // async componentDidUpdate() {
+  //   this.setState({
+  //     isLoading: true,
+  //   });
+  //   const newFavorites = await getFavoriteSongs();
+  //   this.setState({
+  //     isLoading: false,
+  //     favoriteList: newFavorites,
+  //   });
+  // }
+
   render() {
     const { isLoading, favoriteList } = this.state;
     return (
@@ -31,7 +42,7 @@ class Favorites extends Component {
           : favoriteList.map((el, index) => (
             <div key={ index }>
               <AlbunsList img={ el.artworkUrl100 } />
-              <MusicCard { ...el } />
+              <MusicCard { ...el } updateState={ this.updateState } />
             </div>
           )) }
       </div>

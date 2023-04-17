@@ -19,7 +19,6 @@ class MusicCard extends Component {
   }
 
   handleChange = ({ target }) => {
-    // const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState(
       {
@@ -50,7 +49,6 @@ class MusicCard extends Component {
   render() {
     const { trackName, previewUrl, trackId } = this.props;
     const { isLoading, isFavorite } = this.state;
-    // console.log(musicList);
     return (
       <div>
         {isLoading && <Loading /> }
