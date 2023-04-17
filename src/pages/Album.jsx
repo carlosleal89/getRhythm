@@ -15,7 +15,7 @@ class Album extends Component {
     artistName: '',
     musicList: [],
     isLoading: false,
-    // favoriteSongs: [],
+    favoriteSongs: [],
   };
 
   componentDidMount() {
@@ -31,8 +31,8 @@ class Album extends Component {
     const favorites = await getFavoriteSongs();
     this.setState({
       isLoading: false,
+      favoriteSongs: favorites,
     });
-    console.log(favorites);
   };
 
   handleMusicList = async (id) => {
@@ -48,7 +48,7 @@ class Album extends Component {
   };
 
   render() {
-    const { img, album, artistName, musicList, isLoading } = this.state;
+    const { img, album, artistName, musicList, isLoading, favoriteSongs } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -71,6 +71,8 @@ class Album extends Component {
                     previewUrl={ el.previewUrl }
                     trackId={ el.trackId }
                     { ...el }
+                    track={ el }
+                    favorites={ favoriteSongs }
                   />)
               }
             </div>
