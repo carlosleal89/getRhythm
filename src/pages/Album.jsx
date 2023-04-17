@@ -5,7 +5,7 @@ import getMusics from '../services/musicsAPI';
 import AlbunsList from '../components/AlbunsList';
 import MusicCard from '../components/MusicCard';
 import './Album.css';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class Album extends Component {
@@ -15,29 +15,28 @@ class Album extends Component {
     artistName: '',
     musicList: [],
     isLoading: false,
-    favoriteSongs: [],
+    // favoriteSongs: [],
   };
 
   componentDidMount() {
     const { match: { params: id } } = this.props;
-    this.handleFavorites();
+    // this.handleFavorites();
     this.handleMusicList(id);
   }
 
-  handleFavorites = async () => {
-    this.setState({
-      isLoading: true,
-    });
-    const favorites = await getFavoriteSongs();
-    this.setState({
-      isLoading: false,
-      favoriteSongs: favorites,
-    });
-  };
+  // handleFavorites = async () => {
+  //   this.setState({
+  //     isLoading: true,
+  //   });
+  //   const favorites = await getFavoriteSongs();
+  //   this.setState({
+  //     isLoading: false,
+  //     favoriteSongs: favorites,
+  //   });
+  // };
 
   handleMusicList = async (id) => {
     const musicList = await getMusics(id.id);
-    // console.log(musicList);
     const { artistName, artworkUrl100, collectionName } = musicList[0];
     this.setState({
       img: artworkUrl100,
@@ -48,7 +47,7 @@ class Album extends Component {
   };
 
   render() {
-    const { img, album, artistName, musicList, isLoading, favoriteSongs } = this.state;
+    const { img, album, artistName, musicList, isLoading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -71,8 +70,6 @@ class Album extends Component {
                     previewUrl={ el.previewUrl }
                     trackId={ el.trackId }
                     { ...el }
-                    track={ el }
-                    favorites={ favoriteSongs }
                   />)
               }
             </div>
