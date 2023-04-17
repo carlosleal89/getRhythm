@@ -20,15 +20,13 @@ class ProfileEdit extends Component {
 
   handleProfile = async () => {
     const userProfile = await getUser();
-    this.setState({
-      isLoading: false,
-    });
     const { name, email, description, image } = userProfile;
     this.setState({
       userName: name,
       userEmail: email,
       userDescription: description,
       userImg: image,
+      isLoading: false,
     });
   };
 
@@ -135,7 +133,7 @@ class ProfileEdit extends Component {
               disabled={ isDisabled }
               onClick={ this.handleButton }
             >
-              Salvar
+              Editar perfil
             </button>
           </form>
         )}

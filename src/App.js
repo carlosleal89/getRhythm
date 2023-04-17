@@ -17,12 +17,11 @@ class App extends React.Component {
           <Route exact path="/search" render={ () => <Search /> } />
           <Route exact path="/album/:id" render={ (props) => <Album { ...props } /> } />
           <Route exact path="/favorites" render={ () => <Favorites /> } />
-          <Route exact path="/profile/" component={ Profile } />
+          <Route exact path="/profile/" render={ () => <Profile /> } />
           <Route
             exact
             path="/profile/edit"
-            // render={ (props) => <ProfileEdit { ...props }
-            component={ ProfileEdit }
+            render={ (props) => <ProfileEdit { ...props } /> }
           />
           <Route exact path="*" render={ () => <NotFound /> } />
         </Switch>
