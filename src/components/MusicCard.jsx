@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import { addSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
 class MusicCard extends Component {
@@ -9,45 +9,36 @@ class MusicCard extends Component {
     isLoading: false,
   };
 
-  componentDidMount() {
-    this.handleChange();
-  }
-
-  handleFavorite() {
-    const { track, favoriteSongs } = this.props;
-    const trackIds = favoriteSongs.map((el) => el.trackId);
-    if (trackIds.includes(track.trackId)) {
-      this.setState({
-        isFavorite: true,
-      });
-      console.log(this.state);
-    }
-  }
-
-  handleChange = async ({ target }) => {
+  handleChange = ({ target }) => {
     // const { name } = target;
-    const { track } = this.props;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState(
       {
-        isLoading: true,
         isFavorite: value,
       },
       this.handleFavorite,
     );
-    if (target.checked === true) {
-      await addSong(track);
-    } else {
-      await removeSong(track);
+  };
+
+  handleFavorite = async () => {
+    const { isFavorite } = this.state;
+    if (isFavorite) {
+      this.setState({
+        isLoading: true,
+      });
     }
-    this.setState({
-      isLoading: false,
-    });
+    console.log(this.props);
+    if (isFavorite) {
+      await addSong(this.props);
+      this.setState({
+        isLoading: false,
+      });
+    }
   };
 
   render() {
     const { trackName, previewUrl, trackId } = this.props;
-    const { isLoading, isFavorite } = this.state;
+    const { isLoading } = this.state;
     // console.log(musicList);
     return (
       <div>
@@ -68,7 +59,6 @@ class MusicCard extends Component {
               data-testid={ `checkbox-music-${trackId}` }
               name="trackId"
               onChange={ this.handleChange }
-              checked={ isFavorite }
             />
           </label>
         </div>

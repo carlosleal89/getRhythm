@@ -15,7 +15,7 @@ class Album extends Component {
     artistName: '',
     musicList: [],
     isLoading: false,
-    favoriteSongs: [],
+    // favoriteSongs: [],
   };
 
   componentDidMount() {
@@ -31,13 +31,12 @@ class Album extends Component {
     const favorites = await getFavoriteSongs();
     this.setState({
       isLoading: false,
-      favoriteSongs: favorites,
     });
+    console.log(favorites);
   };
 
   handleMusicList = async (id) => {
     const musicList = await getMusics(id.id);
-    musicList.shift();
     // console.log(musicList);
     const { artistName, artworkUrl100, collectionName } = musicList[0];
     this.setState({
@@ -49,7 +48,7 @@ class Album extends Component {
   };
 
   render() {
-    const { img, album, artistName, musicList, isLoading, favoriteSongs } = this.state;
+    const { img, album, artistName, musicList, isLoading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -65,16 +64,14 @@ class Album extends Component {
             <div className="music-list">
               {
                 musicList
-                  .map((el, index) => (<MusicCard
+                  .map((el, index) => index > 0
+                  && <MusicCard
                     key={ index }
                     trackName={ el.trackName }
                     previewUrl={ el.previewUrl }
                     trackId={ el.trackId }
                     { ...el }
-                    track={ el }
-                    favoriteSongs={ favoriteSongs }
-                    // isChecked={ isChecked }
-                  />))
+                  />)
               }
             </div>
           </div>
