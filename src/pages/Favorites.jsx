@@ -22,16 +22,9 @@ class Favorites extends Component {
     });
   }
 
-  // async componentDidUpdate() {
-  //   this.setState({
-  //     isLoading: true,
-  //   });
-  //   const newFavorites = await getFavoriteSongs();
-  //   this.setState({
-  //     isLoading: false,
-  //     favoriteList: newFavorites,
-  //   });
-  // }
+  componentDidUpdate() {
+    console.log('tst');
+  }
 
   render() {
     const { isLoading, favoriteList } = this.state;
