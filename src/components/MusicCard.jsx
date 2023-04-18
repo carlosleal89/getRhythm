@@ -7,16 +7,15 @@ class MusicCard extends Component {
   state = {
     isFavorite: false,
     isLoading: false,
-    favorites: [],
   };
 
   componentDidMount() {
     this.checkFavorites();
   }
 
-  componentDidUpdate() {
-    this.checkFavorites();
-  }
+  // componentDidUpdate() {
+  //   this.checkFavorites();
+  // }
 
   checkFavorites = async () => {
     const { trackId } = this.props;
