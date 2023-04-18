@@ -11,7 +11,11 @@ class Favorites extends Component {
     favoriteList: [],
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getFavoriteSongs();
+  }
+
+  getFavoriteSongs = async () => {
     this.setState({
       isLoading: true,
     });
@@ -20,7 +24,7 @@ class Favorites extends Component {
       isLoading: false,
       favoriteList: favorites,
     });
-  }
+  };
 
   updateState = (trackId) => {
     this.setState((prevState) => {
