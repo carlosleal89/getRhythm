@@ -19,7 +19,6 @@ class Profile extends Component {
 
   handleProfile = async () => {
     const userProfile = await getUser();
-    // console.log(userProfile);
     this.setState({
       isLoading: false,
     });

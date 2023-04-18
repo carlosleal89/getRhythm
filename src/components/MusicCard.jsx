@@ -13,10 +13,6 @@ class MusicCard extends Component {
     this.checkFavorites();
   }
 
-  // componentDidUpdate() {
-  //   this.checkFavorites();
-  // }
-
   checkFavorites = async () => {
     const { trackId } = this.props;
     const favorites = await getFavoriteSongs();
@@ -38,35 +34,31 @@ class MusicCard extends Component {
 
   handleFavorite = async () => {
     const { isFavorite } = this.state;
-    const { updateState, trackId } = this.props;
+    const { updateState, trackId, music } = this.props;
     this.setState({
       isLoading: true,
     });
     if (isFavorite) {
-      await addSong(this.props);
-      this.setState({
-        isLoading: false,
-      });
+      await addSong(music);
     } else {
-      await removeSong(this.props);
+      await removeSong(music);
       if (typeof updateState === 'function') {
         updateState(trackId);
       }
-      this.checkFavorites();
-      this.setState({
-        isLoading: false,
-      });
     }
+    this.setState({
+      isLoading: false,
+    });
   };
 
   render() {
-    const { trackName, previewUrl, trackId } = this.props;
+    const { music, previewUrl, trackId } = this.props;
     const { isLoading, isFavorite } = this.state;
     return (
       <div>
         {isLoading && <Loading /> }
         <div>
-          <p>{trackName}</p>
+          <p>{music.trackName}</p>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
             O seu navegador não suporta o elemento
@@ -74,10 +66,10 @@ class MusicCard extends Component {
             <code>audio</code>
             .
           </audio>
-          <label htmlFor="favorite-id">
+          <label htmlFor={ trackId }>
             Favorita
             <input
-              id="favorite-id"
+              id={ trackId }
               type="checkbox"
               data-testid={ `checkbox-music-${trackId}` }
               name="trackId"

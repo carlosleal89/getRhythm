@@ -5,7 +5,6 @@ import getMusics from '../services/musicsAPI';
 import AlbunsList from '../components/AlbunsList';
 import MusicCard from '../components/MusicCard';
 import './Album.css';
-// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class Album extends Component {
@@ -15,25 +14,12 @@ class Album extends Component {
     artistName: '',
     musicList: [],
     isLoading: false,
-    // favoriteSongs: [],
   };
 
   componentDidMount() {
     const { match: { params: id } } = this.props;
-    // this.handleFavorites();
     this.handleMusicList(id);
   }
-
-  // handleFavorites = async () => {
-  //   this.setState({
-  //     isLoading: true,
-  //   });
-  //   const favorites = await getFavoriteSongs();
-  //   this.setState({
-  //     isLoading: false,
-  //     favoriteSongs: favorites,
-  //   });
-  // };
 
   handleMusicList = async (id) => {
     const musicList = await getMusics(id.id);
@@ -69,7 +55,7 @@ class Album extends Component {
                     trackName={ el.trackName }
                     previewUrl={ el.previewUrl }
                     trackId={ el.trackId }
-                    { ...el }
+                    music={ el }
                   />)
               }
             </div>

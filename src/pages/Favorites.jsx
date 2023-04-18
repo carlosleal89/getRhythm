@@ -39,8 +39,16 @@ class Favorites extends Component {
         {isLoading ? <Loading />
           : favoriteList.map((el, index) => (
             <div key={ index }>
-              <AlbunsList img={ el.artworkUrl100 } />
-              <MusicCard { ...el } updateState={ this.updateState } />
+              <AlbunsList
+                img={ el.artworkUrl100 }
+                album={ el.collectionName }
+                artistName={ el.artistName }
+              />
+              <MusicCard
+                music={ el }
+                updateState={ this.updateState }
+                trackId={ el.trackId }
+              />
             </div>
           )) }
       </div>
