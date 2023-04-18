@@ -22,9 +22,14 @@ class Favorites extends Component {
     });
   }
 
-  componentDidUpdate() {
-    console.log('tst');
-  }
+  updateState = (trackId) => {
+    this.setState((prevState) => {
+      const updated = prevState.favoriteList.filter((el) => el.trackId !== trackId);
+      return {
+        favoriteList: updated,
+      };
+    });
+  };
 
   render() {
     const { isLoading, favoriteList } = this.state;
