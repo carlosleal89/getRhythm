@@ -4,6 +4,7 @@ import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
 import AlbunsList from '../components/AlbunsList';
+import './Favorites.css';
 
 class Favorites extends Component {
   state = {
@@ -14,13 +15,6 @@ class Favorites extends Component {
   componentDidMount() {
     this.getFavoriteSongs();
   }
-
-  // componentDidUpdate(_prevProps, prevState) {
-  //   const { favoriteList } = this.state;
-  //   if(prevState.favoriteList !== favoriteList) {
-  //     this.getFavoriteSongs();
-  //   }
-  // }
 
   getFavoriteSongs = async () => {
     this.setState({
@@ -47,21 +41,23 @@ class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        {isLoading ? <Loading />
-          : favoriteList.map((el, index) => (
-            <div key={ index }>
-              <AlbunsList
-                img={ el.artworkUrl100 }
-                album={ el.collectionName }
-                artistName={ el.artistName }
-              />
-              <MusicCard
-                music={ el }
-                updateState={ this.updateState }
-                trackId={ el.trackId }
-              />
-            </div>
-          )) }
+        <div className="songs-preview">
+          {isLoading ? <Loading />
+            : favoriteList.map((el, index) => (
+              <div key={ index } className="favorite-section">
+                <AlbunsList
+                  img={ el.artworkUrl100 }
+                  album={ el.collectionName }
+                  artistName={ el.artistName }
+                />
+                <MusicCard
+                  music={ el }
+                  updateState={ this.updateState }
+                  trackId={ el.trackId }
+                />
+              </div>
+            )) }
+        </div>
       </div>
     );
   }
