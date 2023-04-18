@@ -7,6 +7,7 @@ class MusicCard extends Component {
   state = {
     isFavorite: false,
     isLoading: false,
+    favorites: [],
   };
 
   componentDidMount() {
@@ -38,7 +39,7 @@ class MusicCard extends Component {
 
   handleFavorite = async () => {
     const { isFavorite } = this.state;
-    const { updateState } = this.props;
+    const { updateState, trackId } = this.props;
     this.setState({
       isLoading: true,
     });
@@ -49,8 +50,10 @@ class MusicCard extends Component {
       });
     } else {
       await removeSong(this.props);
-      const { trackId } = this.props;
-      updateState(trackId);
+      if (typeof updateState === 'function') {
+        updateState(trackId);
+      }
+      this.checkFavorites();
       this.setState({
         isLoading: false,
       });
