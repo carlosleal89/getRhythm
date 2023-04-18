@@ -17,12 +17,12 @@ class Album extends Component {
   };
 
   componentDidMount() {
-    const { match: { params: id } } = this.props;
-    this.handleMusicList(id);
+    this.handleMusicList();
   }
 
-  handleMusicList = async (id) => {
-    const musicList = await getMusics(id.id);
+  handleMusicList = async () => {
+    const { match: { params: { id } } } = this.props;
+    const musicList = await getMusics(id);
     const { artistName, artworkUrl100, collectionName } = musicList[0];
     this.setState({
       img: artworkUrl100,

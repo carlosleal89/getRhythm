@@ -15,6 +15,13 @@ class Favorites extends Component {
     this.getFavoriteSongs();
   }
 
+  // componentDidUpdate(_prevProps, prevState) {
+  //   const { favoriteList } = this.state;
+  //   if(prevState.favoriteList !== favoriteList) {
+  //     this.getFavoriteSongs();
+  //   }
+  // }
+
   getFavoriteSongs = async () => {
     this.setState({
       isLoading: true,
