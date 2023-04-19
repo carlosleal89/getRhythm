@@ -49,6 +49,8 @@ class MusicCard extends Component {
     this.setState({
       isLoading: false,
     });
+
+    this.forceUpdate();
   };
 
   render() {

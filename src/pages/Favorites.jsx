@@ -43,8 +43,8 @@ class Favorites extends Component {
         <Header />
         <div className="songs-preview">
           {isLoading ? <Loading />
-            : favoriteList.map((el, index) => (
-              <div key={ index } className="favorite-section">
+            : favoriteList.map((el) => (
+              <div key={ el.trackId } className="favorite-section">
                 <AlbunsList
                   img={ el.artworkUrl100 }
                   album={ el.collectionName }
