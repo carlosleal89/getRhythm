@@ -4,6 +4,7 @@ import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
 import AlbunsList from '../components/AlbunsList';
+import './Favorites.css';
 
 class Favorites extends Component {
   state = {
@@ -11,7 +12,11 @@ class Favorites extends Component {
     favoriteList: [],
   };
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getFavoriteSongs();
+  }
+
+  getFavoriteSongs = async () => {
     this.setState({
       isLoading: true,
     });
@@ -20,7 +25,7 @@ class Favorites extends Component {
       isLoading: false,
       favoriteList: favorites,
     });
-  }
+  };
 
   updateState = (trackId) => {
     this.setState((prevState) => {
@@ -36,21 +41,24 @@ class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        {isLoading ? <Loading />
-          : favoriteList.map((el, index) => (
-            <div key={ index }>
-              <AlbunsList
-                img={ el.artworkUrl100 }
-                album={ el.collectionName }
-                artistName={ el.artistName }
-              />
-              <MusicCard
-                music={ el }
-                updateState={ this.updateState }
-                trackId={ el.trackId }
-              />
-            </div>
-          )) }
+        <div className="songs-preview">
+          {isLoading ? <Loading />
+            : favoriteList.map((el) => (
+              <div key={ el.trackId } className="favorite-section">
+                <AlbunsList
+                  img={ el.artworkUrl100 }
+                  album={ el.collectionName }
+                  artistName={ el.artistName }
+                />
+                <MusicCard
+                  music={ el }
+                  updateState={ this.updateState }
+                  previewUrl={ el.previewUrl }
+                  trackId={ el.trackId }
+                />
+              </div>
+            )) }
+        </div>
       </div>
     );
   }

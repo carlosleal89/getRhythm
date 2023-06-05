@@ -35,9 +35,6 @@ class MusicCard extends Component {
   handleFavorite = async () => {
     const { isFavorite } = this.state;
     const { updateState, trackId, music } = this.props;
-    this.setState({
-      isLoading: true,
-    });
     if (isFavorite) {
       await addSong(music);
     } else {
@@ -46,9 +43,7 @@ class MusicCard extends Component {
         updateState(trackId);
       }
     }
-    this.setState({
-      isLoading: false,
-    });
+    this.forceUpdate();
   };
 
   render() {
