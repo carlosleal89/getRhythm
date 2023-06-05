@@ -53,6 +53,7 @@ class Favorites extends Component {
                 <MusicCard
                   music={ el }
                   updateState={ this.updateState }
+                  previewUrl={ el.previewUrl }
                   trackId={ el.trackId }
                 />
               </div>
