@@ -7,6 +7,7 @@ import Loading from '../pages/Loading';
 class Header extends Component {
   state = {
     name: '',
+    image: '',
     isLoading: true,
   };
 
@@ -15,27 +16,37 @@ class Header extends Component {
   }
 
   handleUserName = async () => {
-    const { name } = await getUser();
+    const { name, image } = await getUser();
     this.setState({
       name,
+      image,
       isLoading: false,
     });
   };
 
   render() {
-    const { isLoading, name } = this.state;
+    const { isLoading, name, image } = this.state;
     return (
       <header data-testid="header-component" className="header-class">
-        <ul>
-          <li><Link to="/search" data-testid="link-to-search">Pesquisar</Link></li>
-          <li><Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link></li>
+        <ul className="links-el">
+          <li><Link to="/search" data-testid="link-to-search">Search</Link></li>
+          <li>
+            <Link to="/favorites" data-testid="link-to-favorites">
+              Favorites
+            </Link>
+          </li>
           <li><Link to="/profile" data-testid="link-to-profile">Profile</Link></li>
         </ul>
         <h1>TrybeTunes</h1>
         {isLoading ? (
           <Loading />
         ) : (
-          <p data-testid="header-user-name" className="user-name-class">{ name }</p>
+          <div className="profile-preview">
+            <div className="name-el">
+              <p data-testid="header-user-name" className="user-name-class">{ name }</p>
+            </div>
+            <img src={ image } alt="user" className="profile-picture" />
+          </div>
         )}
       </header>
     );

@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import md5 from 'js-md5';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {
   state = {
     nameInput: '',
+    emailInput: '',
     isDisabled: true,
     isLoading: false,
   };
@@ -22,8 +25,9 @@ class Login extends Component {
 
   handleError = () => {
     const MIN_CHAR = 3;
-    const { nameInput } = this.state;
-    if (nameInput.length >= MIN_CHAR) {
+    const emailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const { nameInput, emailInput } = this.state;
+    if (nameInput.length >= MIN_CHAR && emailValidation.test(emailInput)) {
       this.setState({
         isDisabled: false,
       });
@@ -34,16 +38,17 @@ class Login extends Component {
     this.setState({
       isLoading: true,
     });
-    const { nameInput } = this.state;
+    const { nameInput, emailInput } = this.state;
     const { history } = this.props;
-    const response = await createUser({ name: nameInput });
+    const hash = md5(emailInput).toString();
+    const response = await createUser({ name: nameInput, email: emailInput, image: `https://www.gravatar.com/avatar/${hash}` });
     if (response) {
       history.push('/search');
     }
   };
 
   render() {
-    const { nameInput, isDisabled, isLoading } = this.state;
+    const { nameInput, emailInput, isDisabled, isLoading } = this.state;
     return (
       <div data-testid="page-login" className="login">
         {isLoading ? (
@@ -52,22 +57,36 @@ class Login extends Component {
           <div className="login-div-class">
             <p>Login</p>
             <form>
-              <label htmlFor="">
-                <p>Digite seu nome:</p>
+              <div className="form-floating mb-3">
                 <input
-                  data-testid="login-name-input"
                   type="text"
-                  id="name-input"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
                   name="nameInput"
                   value={ nameInput }
                   onChange={ this.handleChange }
                 />
-              </label>
+                <label htmlFor="floatingInput">Name</label>
+              </div>
+              <div className="form-floating mb-3">
+                <input
+                  type="email"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                  name="emailInput"
+                  value={ emailInput }
+                  onChange={ this.handleChange }
+                />
+                <label htmlFor="floatingInput">Email</label>
+              </div>
             </form>
             <button
               data-testid="login-submit-button"
               onClick={ () => this.handleloginBtn() }
               disabled={ isDisabled }
+              className="btn btn-success"
             >
               Entrar
             </button>

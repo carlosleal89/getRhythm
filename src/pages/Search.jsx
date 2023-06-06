@@ -85,21 +85,24 @@ class Search extends Component {
         ) : (
           <div className="search-form">
             <form>
-              <label htmlFor="artist-input">
+              <div className="form-floating mb-3">
                 <input
-                  data-testid="search-artist-input"
-                  placeholder="Nome do artista"
+                  type="text"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
                   name="artistInput"
-                  id="artist-input"
                   value={ artistInput }
                   onChange={ this.handleChange }
                 />
-              </label>
+                <label htmlFor="floatingInput">Artist Name</label>
+              </div>
             </form>
             <button
               data-testid="search-artist-button"
               onClick={ this.handleButton }
               disabled={ isDisabled }
+              className="btn btn-success"
             >
               Pesquisar
             </button>
