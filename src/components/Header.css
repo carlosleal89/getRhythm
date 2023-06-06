@@ -1,6 +1,6 @@
 .header-class {
   align-items: center;
-  background-color: rgb(183, 228, 199);
+  background-color: rgb(21, 72, 87);
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -9,4 +9,24 @@
 
 .user-name-class {
   padding: 10px;
+}
+
+.profile-preview {
+  display: flex;
+}
+
+.profile-picture {
+  border-radius: 50px;
+}
+
+.name-el {
+  position: absolute;
+  right: 90px;
+  top: 20px;
+}
+
+.links-el {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
 }

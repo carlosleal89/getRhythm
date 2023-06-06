@@ -4,6 +4,7 @@ import md5 from 'js-md5';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {
   state = {
@@ -56,32 +57,36 @@ class Login extends Component {
           <div className="login-div-class">
             <p>Login</p>
             <form>
-              <label htmlFor="name-input">
+              <div className="form-floating mb-3">
                 <input
-                  data-testid="login-name-input"
                   type="text"
-                  id="name-input"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
                   name="nameInput"
                   value={ nameInput }
                   onChange={ this.handleChange }
-                  placeholder="Name"
                 />
-              </label>
-              <label htmlFor="email-input">
+                <label htmlFor="floatingInput">Name</label>
+              </div>
+              <div className="form-floating mb-3">
                 <input
                   type="email"
-                  id="email-input"
+                  className="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
                   name="emailInput"
                   value={ emailInput }
                   onChange={ this.handleChange }
-                  placeholder="Email"
                 />
-              </label>
+                <label htmlFor="floatingInput">Email</label>
+              </div>
             </form>
             <button
               data-testid="login-submit-button"
               onClick={ () => this.handleloginBtn() }
               disabled={ isDisabled }
+              className="btn btn-success"
             >
               Entrar
             </button>

@@ -1,0 +1,16 @@
+.music-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.music-name-favorite-el {
+  display: flex;
+}
+
+h5 {
+  margin: 5px;
+}
+
+label {
+  display: flex;
+}

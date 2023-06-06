@@ -39,25 +39,27 @@ class Album extends Component {
         <Header />
         <div>
           {isLoading && <Loading />}
-          <h2 data-testid="artist-name">{ artistName }</h2>
-          <div data-testid="album-name" className="music-list-div">
-            <AlbunsList
-              img={ img }
-              album={ album }
-              artistName={ artistName }
-            />
-            <div className="music-list">
-              {
-                musicList
-                  .map((el, index) => index > 0
-                  && <MusicCard
-                    key={ index }
-                    trackName={ el.trackName }
-                    previewUrl={ el.previewUrl }
-                    trackId={ el.trackId }
-                    music={ el }
-                  />)
-              }
+          <div>
+            <h2 data-testid="artist-name" className="artist-name-el">{ artistName }</h2>
+            <div data-testid="album-name" className="music-list-div">
+              <AlbunsList
+                img={ img }
+                album={ album }
+                artistName={ artistName }
+              />
+              <div className="music-list">
+                {
+                  musicList
+                    .map((el, index) => index > 0
+                    && <MusicCard
+                      key={ index }
+                      trackName={ el.trackName }
+                      previewUrl={ el.previewUrl }
+                      trackId={ el.trackId }
+                      music={ el }
+                    />)
+                }
+              </div>
             </div>
           </div>
         </div>
