@@ -7,6 +7,7 @@ import Loading from '../pages/Loading';
 class Header extends Component {
   state = {
     name: '',
+    image: '',
     isLoading: true,
   };
 
@@ -15,15 +16,16 @@ class Header extends Component {
   }
 
   handleUserName = async () => {
-    const { name } = await getUser();
+    const { name, image } = await getUser();
     this.setState({
       name,
+      image,
       isLoading: false,
     });
   };
 
   render() {
-    const { isLoading, name } = this.state;
+    const { isLoading, name, image } = this.state;
     return (
       <header data-testid="header-component" className="header-class">
         <ul>
@@ -35,7 +37,10 @@ class Header extends Component {
         {isLoading ? (
           <Loading />
         ) : (
-          <p data-testid="header-user-name" className="user-name-class">{ name }</p>
+          <div>
+            <p data-testid="header-user-name" className="user-name-class">{ name }</p>
+            <img src={ image } alt="user" />
+          </div>
         )}
       </header>
     );

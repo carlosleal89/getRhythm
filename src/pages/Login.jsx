@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import md5 from 'js-md5';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import './Login.css';
@@ -7,6 +8,7 @@ import './Login.css';
 class Login extends Component {
   state = {
     nameInput: '',
+    emailInput: '',
     isDisabled: true,
     isLoading: false,
   };
@@ -22,8 +24,9 @@ class Login extends Component {
 
   handleError = () => {
     const MIN_CHAR = 3;
-    const { nameInput } = this.state;
-    if (nameInput.length >= MIN_CHAR) {
+    const emailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const { nameInput, emailInput } = this.state;
+    if (nameInput.length >= MIN_CHAR && emailValidation.test(emailInput)) {
       this.setState({
         isDisabled: false,
       });
@@ -34,16 +37,17 @@ class Login extends Component {
     this.setState({
       isLoading: true,
     });
-    const { nameInput } = this.state;
+    const { nameInput, emailInput } = this.state;
     const { history } = this.props;
-    const response = await createUser({ name: nameInput });
+    const hash = md5(emailInput).toString();
+    const response = await createUser({ name: nameInput, email: emailInput, image: `https://www.gravatar.com/avatar/${hash}` });
     if (response) {
       history.push('/search');
     }
   };
 
   render() {
-    const { nameInput, isDisabled, isLoading } = this.state;
+    const { nameInput, emailInput, isDisabled, isLoading } = this.state;
     return (
       <div data-testid="page-login" className="login">
         {isLoading ? (
@@ -52,8 +56,7 @@ class Login extends Component {
           <div className="login-div-class">
             <p>Login</p>
             <form>
-              <label htmlFor="">
-                <p>Digite seu nome:</p>
+              <label htmlFor="name-input">
                 <input
                   data-testid="login-name-input"
                   type="text"
@@ -61,6 +64,17 @@ class Login extends Component {
                   name="nameInput"
                   value={ nameInput }
                   onChange={ this.handleChange }
+                  placeholder="Name"
+                />
+              </label>
+              <label htmlFor="email-input">
+                <input
+                  type="email"
+                  id="email-input"
+                  name="emailInput"
+                  value={ emailInput }
+                  onChange={ this.handleChange }
+                  placeholder="Email"
                 />
               </label>
             </form>
