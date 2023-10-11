@@ -5,6 +5,7 @@ import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import '../styles/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../data/images/logo.png';
 
 class Login extends Component {
   state = {
@@ -50,10 +51,11 @@ class Login extends Component {
   render() {
     const { nameInput, emailInput, isDisabled, isLoading } = this.state;
     return (
-      <div data-testid="page-login" className="login">
+      <div className="login">
+        <img src={ logo } alt='logo' id='logo-img'/>
         {isLoading ? (
           <Loading />
-        ) : (
+        ) : (          
           <div className="login-div-class">
             <p>Login</p>
             <form>

@@ -1,0 +1,17 @@
+@media screen and (min-width: 375px){
+  .login {
+    max-width: 100%;
+  }
+  
+  .login-div-class {
+    /* margin-bottom: 10rem; */
+  }
+}
+
+
+
+
+
+/* @media screen and (min-width: 414px){} */
+/* @media screen and (min-width: 768px){} */
+/* @media screen and (min-width: 1024px){} */
