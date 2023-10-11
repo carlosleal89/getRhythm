@@ -38,16 +38,12 @@ class Header extends Component {
           <li><Link to="/profile" data-testid="link-to-profile">Profile</Link></li>
         </ul>
         <h1>TrybeTunes</h1>
-        {isLoading ? (
-          <Loading />
-        ) : (
           <div className="profile-preview">
             <div className="name-el">
               <p data-testid="header-user-name" className="user-name-class">{ name }</p>
             </div>
             <img src={ image } alt="user" className="profile-picture" />
           </div>
-        )}
       </header>
     );
   }
