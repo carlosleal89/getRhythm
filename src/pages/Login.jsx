@@ -63,7 +63,7 @@ class Login extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="floatingInput"
+                  id="floatingInputName"
                   placeholder="name@example.com"
                   name="nameInput"
                   value={ nameInput }
@@ -75,7 +75,7 @@ class Login extends Component {
                 <input
                   type="email"
                   className="form-control"
-                  id="floatingInput"
+                  id="floatingInputEmail"
                   placeholder="name@example.com"
                   name="emailInput"
                   value={ emailInput }
