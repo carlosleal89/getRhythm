@@ -1,6 +1,44 @@
-<h2>GetRhythm!!!</h2>
+# GetRhythm: Sua Plataforma de Música Personalizada
 
-Fique a vontade para buscar sua banda, ouvir e favoritar suas musicas favoritas.
-Utilize um email do Gravatar para uma experiência mais personalizada.
+getrhythm.vercel.app/
+
+Bem-vindo ao GetRhythm, sua plataforma de música personalizada onde você pode buscar suas bandas favoritas, ouvir e favoritar músicas, tudo em um só lugar. Utilize um email do Gravatar para uma experiência mais personalizada.
+
+## Funcionalidades Principais
+- Busque e encontre suas bandas e músicas favoritas.
+- Ouça músicas diretamente no seu navegador.
+- Favorite músicas para ouvir mais tarde.
+
+## Tecnologias Utilizadas
+- **Frontend:** React.js, Bootstrap, CSS
+- **APIs:** Gravatar API, ITunes API
+
+
+## Como Executar o Projeto:
+  **Clone o Repositório:**
+  - git clone git@github.com:carlosleal89/getRhythm.git
+
+    ## Via Docker
+    - Caso não tenha o Docker instalado em seu sistema, acesse https://www.docker.com/get-started/
+      1. **Monte a imagem docker:**
+        - docker build -t getrhythm .
+        
+      2. **Execute o container:**
+        - docker run -p 3000:3000 trybetunes-app
+        - Acesse o aplicativo em seu navegador em http://localhost:3000.
+
+    ## Executar Localmente
+
+      ### Pré-requisitos
+      - Node 16 ou 18 instalado em sua máquina
+
+      ### Passos para Execução
+
+        1. **Instale as Dependências:**
+          - npm install
+
+        2. **Execute o projeto:**
+          - npm start
+          - Acesse o aplicativo em seu navegador em http://localhost:3000.
 
 
