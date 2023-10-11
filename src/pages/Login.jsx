@@ -78,6 +78,9 @@ class Login extends Component {
                   name="emailInput"
                   value={ emailInput }
                   onChange={ this.handleChange }
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Insira um email do Gravatar para uma melhor experiência. Ou qualquer email fictício."
                 />
                 <label htmlFor="floatingInput">Email</label>
               </div>
