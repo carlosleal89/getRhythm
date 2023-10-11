@@ -4,7 +4,7 @@ import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
 import AlbunsList from '../components/AlbunsList';
-import './Favorites.css';
+import '../styles/Favorites.css';
 
 class Favorites extends Component {
   state = {

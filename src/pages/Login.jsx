@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import md5 from 'js-md5';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
-import './Login.css';
+import '../styles/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {

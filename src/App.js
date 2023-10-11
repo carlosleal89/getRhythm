@@ -7,13 +7,13 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
-import './App.css';
+import './styles/App.css';
 
-let tooltipTriggerList = []
-  .slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl);
-});
+// let tooltipTriggerList = []
+//   .slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+// let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+//   return new bootstrap.Tooltip(tooltipTriggerEl);
+// });
 
 class App extends React.Component {
   render() {

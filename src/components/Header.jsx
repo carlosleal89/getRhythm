@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Header.css';
+import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
