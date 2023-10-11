@@ -1,17 +1,31 @@
 @media screen and (min-width: 375px){
   .login {
-    max-width: 100%;
+    margin: 8rem 0;
   }
-  
+
   .login-div-class {
-    /* margin-bottom: 10rem; */
+    width: 20rem;
+  }
+
+  #logo-img {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 414px){
+  .login {
+    margin: 15rem 0;
+  }
+
+  .login-div-class {
+    width: 60%;
+  }
+
+  #logo-img {
+    width: 50%;
   }
 }
 
 
-
-
-
-/* @media screen and (min-width: 414px){} */
 /* @media screen and (min-width: 768px){} */
 /* @media screen and (min-width: 1024px){} */
