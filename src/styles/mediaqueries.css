@@ -6,6 +6,29 @@
   #logo-img {
     width: 80%;
   }
+
+  .profile-picture {    
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    gap: 4rem;  
+  }
+
+  .user-name-class {
+    font-size: 1.3rem;
+    margin: 3px 0;
+  }
+
+  .links-el {
+    margin: 0.5rem;
+  }
+
+    li a {
+      font-size: 1.2rem;
+      padding: 3px 15px;
+    }
 }
 
 @media screen and (min-width: 414px){
@@ -14,7 +37,53 @@
   }
 
   #logo-img {
-    width: 90%;
+    width: 50%;    
+  }
+
+  .header-left {
+    gap: 5rem;  
+  }
+
+  #header-logo {
+    width: 40%;
+  }
+
+  .user-name-class {
+    font-size: 1.5rem;
+  }
+
+  .links-el {
+    margin: 0 0 1rem;
+  }
+
+  li a {
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .header-left {
+    gap: 8rem;
+  }
+
+  .profile-preview {
+    width: 20%;
+  }
+  
+  #header-logo {
+    /* width: 40%; */
+  }
+
+  .profile-picture {    
+    width: 100%;
+    margin-top: 1.1rem;
+  }
+
+  .user-name-class {
+    margin-top: 0.7rem;
+    font-size: 2rem;
   }
 }
 
