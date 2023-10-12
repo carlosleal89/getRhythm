@@ -1,4 +1,5 @@
 @media screen and (min-width: 375px){
+  /*Login*/
   .login {
     margin: 1rem 0;
   }
@@ -6,6 +7,8 @@
   #logo-img {
     width: 80%;
   }
+
+  /*Header*/
 
   .profile-picture {    
     width: 100%;
@@ -32,6 +35,7 @@
 }
 
 @media screen and (min-width: 414px){
+  /*Login*/
   .login {
     margin: 4rem 0;
   }
@@ -39,6 +43,8 @@
   #logo-img {
     width: 50%;    
   }
+
+  /*Header*/
 
   .header-left {
     gap: 5rem;  
@@ -72,6 +78,7 @@
 }
 
 @media screen and (min-width: 600px){
+  /*Header*/
   .header-left {
     gap: 8rem;
   }
@@ -101,6 +108,7 @@
 }
 
 @media screen and (min-width: 768px){
+  /*Login*/
   .login {
     margin: 5rem 0;
   }
@@ -112,6 +120,7 @@
 }
 
 @media screen and (min-width: 1024px){
+  /*Login*/
   .login {
     margin: 3rem 0;
   }
@@ -125,31 +134,56 @@
     width: 60%;
   }
 
+  /*Header*/
+
   .header-class {
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: left;
+    height: 10rem;
   }
 
+  #header-logo {
+    position: absolute;
+    top: 0.5rem;
+    left: 27.1rem;
+    width: 15%;
+  }
+
+
   .header-left {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse;    
   }
 
   .links-el {
-    /* gap: 3rem; */
+    gap: 1rem;
     flex-direction: column;
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
   }
   
   li {
       padding: 0;
       margin: 0;
-      /* width: 20rem; */
+      text-align: center;
     }
+    
+  li a {
+    font-size: 1.1rem;
+  }
+
+  .profile-picture {
+    width: 5rem;
+    margin: 0.5rem 0 1rem 1rem;
+  }
+
+  .user-name-class {
+    margin: 0 0 0 1rem;
+  }
 }
 
 @media screen and (min-width: 1280px){
-  .login {
-    /* margin: 1rem 0; */
-  }
+  /*Login*/
 
   #logo-img {
     margin-top: 1rem;
@@ -159,9 +193,27 @@
   .login-div-class {
     width: 60%;
   }
+
+  /*Header*/
+
+  #header-logo {
+    top: -0.5rem;
+    left: 33.8rem;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  /*Header*/
+  #header-logo {
+    width: 13%;
+    top: -0.5rem;
+    left: 38.9rem;
+  }
 }
 
 @media screen and (min-width: 1600px){
+  /*Login*/
+  
   .login {
     margin: 1rem 0;
   }
@@ -174,23 +226,25 @@
   .login-div-class {
     width: 30%;
   }
+
+  /*Header*/
+
+  #header-logo {
+    width: 11.2%;
+    top: -0.5rem;
+    left: 46.4rem;
+  }
 }
 
-/* @media screen and (min-width: 1920px){
-  .login {
-    margin: 0;
-  }
+@media screen and (min-width: 1920px){
+  /*Header*/
 
-  #logo-img {
-    margin-top: 3rem;
-    width: 20%;
+  #header-logo {
+    width: 10%;
+    top: -0.5rem;
+    left: 53.7rem;
   }
-
-  .login-div-class {
-    width: 30%;
-    color: red;
-  }
-} */
+}
 
 /* @media screen and (max-height: 415px){ 
   .login {
