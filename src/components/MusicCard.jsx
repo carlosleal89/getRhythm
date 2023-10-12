@@ -51,7 +51,7 @@ class MusicCard extends Component {
     const { music, previewUrl, trackId } = this.props;
     const { isLoading, isFavorite } = this.state;
     return (
-      <div>
+      <div id='music-card-conteiner'>
         {isLoading && <Loading /> }
         <div className="music-name-favorite-el">
           <label htmlFor={ trackId }>

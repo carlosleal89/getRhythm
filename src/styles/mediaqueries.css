@@ -64,6 +64,7 @@
 
   .links-el {
     margin: 0 0 8px;
+    gap: 1rem;
   }
 
   li {

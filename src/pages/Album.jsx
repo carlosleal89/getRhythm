@@ -39,7 +39,7 @@ class Album extends Component {
         <Header />
         <div>
           {isLoading && <Loading />}
-          <div>
+          <div id='album-details-conteiner'>
             <h2 className="artist-name-el">{ artistName }</h2>
             <div className="music-list-div">
               <AlbunsList
