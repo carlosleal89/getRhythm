@@ -5,9 +5,20 @@
 }
 
 .search-form {
+  color: #fff;
   align-items: center;
   display: flex;
   flex-direction: column;
   margin-top: 15px;
   text-align: center;
+}
+
+  p {
+    margin: 1rem 0;
+  }
+
+#search-input {
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }

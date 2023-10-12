@@ -78,26 +78,25 @@ class Search extends Component {
       artistName,
     } = this.state;
     return (
-      <div data-testid="page-search">
+      <div id='main-container'>
         <Header />
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <div className="search-form">
-            <form>
-              <div className="form-floating mb-3">
+            {/* <form> */}
+              {/* <div className="form-floating mb-3"> */}
                 <input
                   type="text"
-                  className="form-control"
-                  id="floatingInput"
-                  placeholder="name@example.com"
+                  id="search-input"
+                  placeholder="Artista"
                   name="artistInput"
                   value={ artistInput }
                   onChange={ this.handleChange }
                 />
-                <label htmlFor="floatingInput">Artist Name</label>
-              </div>
-            </form>
+                {/* <label htmlFor="floatingInput">Artist Name</label> */}
+              {/* </div> */}
+            {/* </form> */}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className="search-form">
             <button
               data-testid="search-artist-button"
               onClick={ this.handleButton }

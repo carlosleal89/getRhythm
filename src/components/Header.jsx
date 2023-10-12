@@ -40,9 +40,7 @@ class Header extends Component {
         <div className='header-left'>
           <img src={ logo } alt='logo' id='header-logo' />
           <div className="profile-preview">
-            {/* <div className="name-el"> */}
               <p className="user-name-class">{ name }</p>
-            {/* </div> */}
             <img src={ image } alt="user" className="profile-picture" />
           </div>
         </div>

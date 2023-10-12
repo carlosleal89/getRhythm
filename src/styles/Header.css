@@ -4,6 +4,7 @@
   display: flex;
   height: 100%;
   flex-direction: column-reverse;
+  width: 100%;
 }
 
 .header-left {
@@ -37,7 +38,7 @@
   display: flex;
   justify-content: left;
   list-style-type: none;
-  gap: 1rem;
+  gap: 1.8rem;
   margin: 0;
   padding: 0;
 }
