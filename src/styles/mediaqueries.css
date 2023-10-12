@@ -76,6 +76,11 @@
     padding: 5px 15px;
     margin: 5px;
   }
+  /*Albuns*/
+
+  .music-list {    
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 600px){
@@ -108,6 +113,19 @@
 
   li a {
     font-size: 1.4rem;
+  }
+
+  /*Albuns*/
+  .album-card {
+    position: fixed;
+    left: 1rem;
+  }
+
+  .music-list {
+    position: absolute;
+    left: 15rem;
+    text-align: left;
+    /* width: 50%; */
   }
 }
 
