@@ -40,8 +40,8 @@ class Album extends Component {
         <div>
           {isLoading && <Loading />}
           <div>
-            <h2 data-testid="artist-name" className="artist-name-el">{ artistName }</h2>
-            <div data-testid="album-name" className="music-list-div">
+            <h2 className="artist-name-el">{ artistName }</h2>
+            <div className="music-list-div">
               <AlbunsList
                 img={ img }
                 album={ album }

@@ -7,9 +7,9 @@ class AlbunsList extends Component {
     const { img, album, artistName } = this.props;
     return (
       <div className="album-card">
-        <img src={ img } alt={ `Album Name: ${album}` } />
-        <p>{ album }</p>
-        <p>{ artistName }</p>
+        <img src={ img } alt={ `Album Name: ${album}` } id='album-img'/>
+        <p id='album-name'>{ album }</p>
+        <p id='artist-name'>{ artistName }</p>
       </div>
     );
   }

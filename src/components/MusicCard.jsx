@@ -58,7 +58,6 @@ class MusicCard extends Component {
             <input
               id={ trackId }
               type="checkbox"
-              data-testid={ `checkbox-music-${trackId}` }
               name="trackId"
               onChange={ this.handleChange }
               checked={ isFavorite }
@@ -66,7 +65,7 @@ class MusicCard extends Component {
           </label>
           <h5>{music.trackName}</h5>
         </div>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
+        <audio src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}

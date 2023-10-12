@@ -80,8 +80,6 @@ class Search extends Component {
     return (
       <div id='main-container'>
         <Header />
-            {/* <form> */}
-              {/* <div className="form-floating mb-3"> */}
                 <input
                   type="text"
                   id="search-input"
@@ -90,15 +88,11 @@ class Search extends Component {
                   value={ artistInput }
                   onChange={ this.handleChange }
                 />
-                {/* <label htmlFor="floatingInput">Artist Name</label> */}
-              {/* </div> */}
-            {/* </form> */}
         {isLoading ? (
           <Loading />
         ) : (
           <div className="search-form">
             <button
-              data-testid="search-artist-button"
               onClick={ this.handleButton }
               disabled={ isDisabled }
               className="btn btn-success"

@@ -88,19 +88,22 @@
   }
 
   .profile-picture {  
-    margin-top: 15px;
+    margin-top: 5px;
+    width: 6.5rem;
+  }
+
+  #header-logo {
+    width: 35%;
   }
 
   .user-name-class {
     margin-top: 0.7rem;
-    font-size: 2rem;
-  }
+    font-size: 1.8rem;
+  }  
 
   .links-el {
     gap: 3rem;
-  }
-
-  
+  }  
 
   li a {
     font-size: 1.4rem;
