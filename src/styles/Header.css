@@ -1,32 +1,49 @@
 .header-class {
   align-items: center;
-  background-color: rgb(21, 72, 87);
+  background-color: #1d1d1d;
   display: flex;
-  height: 100px;
-  justify-content: space-between;
-  padding: 10px;
+  height: 100%;
+  flex-direction: column-reverse;
 }
 
-.user-name-class {
-  padding: 10px;
+.header-left {
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-logo {
+  width: 35%;
 }
 
 .profile-preview {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-name-class {
+  color: #fff;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  
 }
 
 .profile-picture {
   border-radius: 50px;
-}
-
-.name-el {
-  position: absolute;
-  right: 90px;
-  top: 20px;
+  width: 90%;
 }
 
 .links-el {
   display: flex;
-  flex-direction: column;
-  margin-top: 15px;
+  justify-content: left;
+  list-style-type: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
+
+  li a {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
