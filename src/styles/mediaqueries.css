@@ -3,32 +3,18 @@
     margin: 1rem 0;
   }
 
-  .login-div-class {
-    width: 20rem;
-  }
-
   #logo-img {
     width: 80%;
   }
 }
-
-/* @media screen and (min-height: 812px){
-  .login {
-    margin: 5.5rem 0;
-  }
-} */
 
 @media screen and (min-width: 414px){
   .login {
     margin: 4rem 0;
   }
 
-  .login-div-class {
-    width: 90%;
-  }
-
   #logo-img {
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -45,7 +31,7 @@
 
 @media screen and (min-width: 1024px){
   .login {
-    margin: 10rem 0;
+    margin: 3rem 0;
   }
 
   #logo-img {
@@ -60,7 +46,7 @@
 
 @media screen and (min-width: 1280px){
   .login {
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
   }
 
   #logo-img {
@@ -73,9 +59,40 @@
   }
 }
 
-@media screen and (max-height: 415px){ /* para modo landscape*/
+@media screen and (min-width: 1600px){
   .login {
     margin: 1rem 0;
+  }
+
+  #logo-img {
+    margin-top: 3rem;
+    width: 25%;
+  }
+
+  .login-div-class {
+    width: 30%;
+  }
+}
+
+/* @media screen and (min-width: 1920px){
+  .login {
+    margin: 0;
+  }
+
+  #logo-img {
+    margin-top: 3rem;
+    width: 20%;
+  }
+
+  .login-div-class {
+    width: 30%;
+    color: red;
+  }
+} */
+
+/* @media screen and (max-height: 415px){ 
+  .login {
+    margin: 0;
   }
 
   #logo-img {
@@ -85,5 +102,14 @@
 
   .login-div-class {
     width: 60%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
   }
-}
+
+  #input-email, #input-name{
+    margin: 5px 0;
+    height: 1.5rem;
+  }
+} */

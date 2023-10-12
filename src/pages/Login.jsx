@@ -53,30 +53,22 @@ class Login extends Component {
     return (
       <div className="login">
         <img src={ logo } alt='logo' id='logo-img'/>
-        {isLoading ? (
-          <Loading />
-        ) : (          
           <div className="login-div-class">
             <p>Login</p>
-            <form>
-              <div className="form-floating mb-3">
                 <input
                   type="text"
                   className="form-control"
-                  id="floatingInputName"
-                  placeholder="name@example.com"
+                  id="input-name"
+                  placeholder="Name"
                   name="nameInput"
                   value={ nameInput }
                   onChange={ this.handleChange }
                 />
-                <label htmlFor="floatingInput">Name</label>
-              </div>
-              <div className="form-floating mb-3">
                 <input
                   type="email"
                   className="form-control"
-                  id="floatingInputEmail"
-                  placeholder="name@example.com"
+                  id="input-email"
+                  placeholder="E-mail"
                   name="emailInput"
                   value={ emailInput }
                   onChange={ this.handleChange }
@@ -84,9 +76,6 @@ class Login extends Component {
                   data-bs-placement="top"
                   title="Insira um email do Gravatar para uma melhor experiência. Ou qualquer email fictício."
                 />
-                <label htmlFor="floatingInput">Email</label>
-              </div>
-            </form>
             <button
               data-testid="login-submit-button"
               onClick={ () => this.handleloginBtn() }
@@ -96,7 +85,6 @@ class Login extends Component {
               Entrar
             </button>
           </div>
-        )}
       </div>
     );
   }
