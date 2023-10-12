@@ -1,6 +1,6 @@
 @media screen and (min-width: 375px){
   .login {
-    margin: 8rem 0;
+    margin: 1rem 0;
   }
 
   .login-div-class {
@@ -12,20 +12,78 @@
   }
 }
 
+/* @media screen and (min-height: 812px){
+  .login {
+    margin: 5.5rem 0;
+  }
+} */
+
 @media screen and (min-width: 414px){
   .login {
-    margin: 15rem 0;
+    margin: 4rem 0;
+  }
+
+  .login-div-class {
+    width: 90%;
+  }
+
+  #logo-img {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .login {
+    margin: 5rem 0;
+  }
+
+  #logo-img {
+    margin-top: 1rem;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .login {
+    margin: 10rem 0;
+  }
+
+  #logo-img {
+    margin-top: 1rem;
+    width: 35%;
   }
 
   .login-div-class {
     width: 60%;
   }
+}
+
+@media screen and (min-width: 1280px){
+  .login {
+    margin: 1rem 0;
+  }
 
   #logo-img {
-    width: 50%;
+    margin-top: 1rem;
+    width: 35%;
+  }
+
+  .login-div-class {
+    width: 60%;
   }
 }
 
+@media screen and (max-height: 415px){ /* para modo landscape*/
+  .login {
+    margin: 1rem 0;
+  }
 
-/* @media screen and (min-width: 768px){} */
-/* @media screen and (min-width: 1024px){} */
+  #logo-img {
+    margin-top: 1rem;
+    width: 30%;
+  }
+
+  .login-div-class {
+    width: 60%;
+  }
+}
