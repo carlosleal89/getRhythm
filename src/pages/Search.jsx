@@ -17,6 +17,12 @@ class Search extends Component {
     artistName: '',
   };
 
+  // checkAlbumCardClass = () => {
+  //   const albumClass = document.getElementsByClassName('album-card');
+  //   albumClass.className = 'album-card-fixed';
+  //   console.log('chamou');
+  // }
+
   handleChange = ({ target: { value, name } }) => {
     this.setState(
       {
@@ -107,8 +113,7 @@ class Search extends Component {
                     {artistList.map((el, index) => (
                       <div key={ index }>
                         <Link
-                          to={ `/album/${el.collectionId}` }
-                          data-testid={ `link-to-album-${el.collectionId}` }
+                          to={ `/album/${el.collectionId}` }                          
                         >
                           <AlbunsList
                             img={ el.artworkUrl100 }

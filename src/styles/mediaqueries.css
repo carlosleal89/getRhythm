@@ -116,7 +116,7 @@
   }
 
   /*Albuns*/
-  .album-card {
+  .album-card-fixed {
     position: fixed;
     left: 1rem;
   }
@@ -125,7 +125,6 @@
     position: absolute;
     left: 15rem;
     text-align: left;
-    /* width: 50%; */
   }
 }
 
@@ -138,6 +137,17 @@
   #logo-img {
     margin-top: 1rem;
     width: 40%;
+  }
+
+  /*Albuns*/
+
+  .music-list {
+    left: 25rem;
+    width: 30%;
+  }
+
+  .album-card {
+    left: 3rem;
   }
 }
 
@@ -154,6 +164,10 @@
 
   .login-div-class {
     width: 60%;
+  }
+
+  .album-card {
+    left: 5rem;
   }
 
   /*Header*/
@@ -202,6 +216,15 @@
   .user-name-class {
     margin: 0 0 0 1rem;
   }
+
+  .album-card {
+    left: 13rem;
+  }
+
+  .music-list {
+    left: 38rem;
+    /* width: 30%; */
+  }
 }
 
 @media screen and (min-width: 1280px){
@@ -222,6 +245,17 @@
     top: -0.5rem;
     left: 33.8rem;
   }
+
+  /*Albuns*/
+
+  .music-list {
+    left: 48rem;
+    width: 20%;
+  }
+
+  .album-card {
+    left: 20rem;
+  }
 }
 
 @media screen and (min-width: 1440px){
@@ -230,6 +264,16 @@
     width: 13%;
     top: -0.5rem;
     left: 38.9rem;
+  }
+
+  /*Albuns*/
+
+  .music-list {
+    left: 52rem;
+  }
+
+  .album-card {
+    left: 24rem;
   }
 }
 
@@ -256,6 +300,17 @@
     top: -0.5rem;
     left: 46.4rem;
   }
+
+  /*Albuns*/
+
+  .music-list {
+    width: 10%;
+    left: 63rem;
+  }
+
+  .album-card {
+    left: 30rem;
+  }
 }
 
 @media screen and (min-width: 1920px){
@@ -265,6 +320,17 @@
     width: 10%;
     top: -0.5rem;
     left: 53.7rem;
+  }
+
+  /*Albuns*/
+
+  .music-list {
+    width: 10%;
+    left: 70rem;
+  }
+
+  .album-card {
+    left: 39rem;
   }
 }
 

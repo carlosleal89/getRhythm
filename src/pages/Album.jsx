@@ -18,6 +18,12 @@ class Album extends Component {
 
   componentDidMount() {
     this.handleMusicList();
+    this.checkAlbumCardClass();
+  }
+  
+  checkAlbumCardClass = () => {
+    const albumClass = document.getElementsByClassName('album-card');
+    albumClass[0].classList.add('album-card-fixed');
   }
 
   handleMusicList = async () => {
