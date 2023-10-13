@@ -126,6 +126,20 @@
     left: 15rem;
     text-align: left;
   }
+
+  /*Favorites*/
+
+  .favorites-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .favorite-section {
+    width: 45%;
+    margin: 0 5px 1rem;
+    justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 768px){
