@@ -1,0 +1,46 @@
+#profile-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+#profile-card-container h3 {
+   font-size: 1.5rem;
+   color: rgb(231, 192, 135);   
+   margin: 1.5rem 0 0;
+}
+
+#profile-img {
+  border-radius: 1rem;
+  width: 40%;
+  margin-top: 1rem;
+}
+
+#profile-card-container p {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+#form-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form-profile-container label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+#form-profile-container input, textarea {
+  border-radius: 8px;
+  text-align: left;
+  padding: 1px;
+}
+
+#form-profile-container button {
+  margin: 1rem 0;
+}

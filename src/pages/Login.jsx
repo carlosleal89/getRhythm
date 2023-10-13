@@ -77,7 +77,6 @@ class Login extends Component {
                   title="Insira um email do Gravatar para uma melhor experiência. Ou qualquer email fictício."
                 />
             <button
-              data-testid="login-submit-button"
               onClick={ () => this.handleloginBtn() }
               disabled={ isDisabled }
               className="btn btn-success"

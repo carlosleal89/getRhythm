@@ -79,15 +79,14 @@ class ProfileEdit extends Component {
       isLoading,
       isDisabled } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div>
         <Header />
         {isLoading ? <Loading /> : (
-          <form>
-            <img src={ userImg } alt="profile" />
+          <form id='form-profile-container'>
+            <img src={ userImg } alt="profile" id='profile-img' />
             <label htmlFor="name-input">
-              Name
+              <p>Name</p>
               <input
-                data-testid="edit-input-name"
                 id="name-input"
                 type="text"
                 name="userName"
@@ -96,9 +95,8 @@ class ProfileEdit extends Component {
               />
             </label>
             <label htmlFor="email-input">
-              Email
+              <p>Email</p>
               <input
-                data-testid="edit-input-email"
                 id="email-input"
                 type="email"
                 name="userEmail"
@@ -107,9 +105,8 @@ class ProfileEdit extends Component {
               />
             </label>
             <label htmlFor="description-input">
-              Descrição
+              <p>Descrição</p>
               <textarea
-                data-testid="edit-input-description"
                 id="description-input"
                 name="userDescription"
                 value={ userDescription }
@@ -118,9 +115,8 @@ class ProfileEdit extends Component {
               />
             </label>
             <label htmlFor="img-input">
-              Alterar foto
+              <p>Alterar foto</p>
               <input
-                data-testid="edit-input-image"
                 id="img-input"
                 type="text"
                 name="userImg"
@@ -129,9 +125,9 @@ class ProfileEdit extends Component {
               />
             </label>
             <button
-              data-testid="edit-button-save"
               disabled={ isDisabled }
               onClick={ this.handleButton }
+              className="btn btn-success"
             >
               Editar perfil
             </button>
