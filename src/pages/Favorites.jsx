@@ -39,9 +39,9 @@ class Favorites extends Component {
   render() {
     const { isLoading, favoriteList } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div>
         <Header />
-        <div className="songs-preview">
+        <div className="favorites-container">
           {isLoading ? <Loading />
             : favoriteList.map((el) => (
               <div key={ el.trackId } className="favorite-section">
