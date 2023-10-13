@@ -133,6 +133,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 1rem;
   }
 
   .favorite-section {
@@ -199,7 +200,6 @@
     width: 15%;
   }
 
-
   .header-left {
     flex-direction: row-reverse;    
   }
@@ -237,7 +237,12 @@
 
   .music-list {
     left: 38rem;
-    /* width: 30%; */
+  }
+
+  /*Favorites*/  
+
+  .favorite-section {
+    width: 30%;
   }
 }
 
@@ -269,6 +274,12 @@
 
   .album-card {
     left: 20rem;
+  }
+
+  /*Favorites*/
+  
+  .favorite-section {
+    width: 25%;
   }
 }
 
@@ -345,6 +356,12 @@
 
   .album-card {
     left: 39rem;
+  }
+
+  /*Favorites*/
+
+  .favorite-section {
+    width: 20%;
   }
 }
 
