@@ -32,7 +32,7 @@ Bem-vindo ao GetRhythm, sua plataforma de música personalizada onde você pode 
     
   2. **Execute o container:**
      
-         - docker run -p 3000:3000 trybetunes-app
+         - docker run -p 3000:3000 getrhythm
      
     - Acesse o aplicativo em seu navegador em http://localhost:3000.
 
