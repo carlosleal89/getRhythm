@@ -8,8 +8,10 @@ class AlbunsList extends Component {
     return (
       <div className="album-card">
         <img src={ img } alt={ `Album Name: ${album}` } id='album-img'/>
-        <p id='album-name'>{ album }</p>
-        <p id='artist-name'>{ artistName }</p>
+        <div className='album-info-container'>
+          <p id='album-name'>{ album }</p>
+          <p id='artist-name'>{ artistName }</p>
+        </div>
       </div>
     );
   }
