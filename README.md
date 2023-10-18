@@ -17,22 +17,22 @@ Bem-vindo ao GetRhythm, sua plataforma de música personalizada onde você pode 
 ## Como Executar o Projeto:
   **Clone o Repositório:**
   
-    - git clone git@github.com:carlosleal89/getRhythm.git
+    git clone git@github.com:carlosleal89/getRhythm.git
 
   **Instale as Dependências:**
 
-    - npm install
+    npm install
 
 ## Via Docker
 - Caso não tenha o Docker instalado em seu sistema, acesse https://www.docker.com/get-started/
   
   1. **Monte a imagem docker:**
      
-         - docker build -t getrhythm .
+         docker build -t getrhythm .
     
   2. **Execute o container:**
      
-         - docker run -p 3000:3000 getrhythm
+         docker run -p 3000:3000 getrhythm
      
     - Acesse o aplicativo em seu navegador em http://localhost:3000.
 
@@ -43,7 +43,7 @@ Bem-vindo ao GetRhythm, sua plataforma de música personalizada onde você pode 
 
    1. **Execute o projeto:**
       
-          - npm start
+          npm start
       
    2. Acesse o aplicativo em seu navegador em http://localhost:3000.
 
