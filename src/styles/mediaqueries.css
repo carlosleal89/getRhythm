@@ -76,11 +76,6 @@
     padding: 5px 15px;
     margin: 5px;
   }
-  /*Albuns*/
-
-  .music-list {    
-    width: 50%;
-  }
 }
 
 @media screen and (min-width: 600px){
@@ -125,6 +120,7 @@
     position: absolute;
     left: 15rem;
     text-align: left;
+    width: 50%;
   }
 
   /*Favorites*/
@@ -163,8 +159,8 @@
   /*Albuns*/
 
   .music-list {
-    left: 25rem;
-    width: 30%;
+    left: 29rem;
+    width: 35%;
   }
 
   .album-card {
@@ -242,7 +238,7 @@
   }
 
   .music-list {
-    left: 38rem;
+    left: 36rem;
   }
 
   /*Favorites*/  
@@ -280,8 +276,8 @@
   /*Albuns*/
 
   .music-list {
-    left: 48rem;
-    width: 20%;
+    left: 43rem;
+    width: 40%;
   }
 
   .album-card {
@@ -292,6 +288,23 @@
   
   .favorite-section {
     width: 25%;
+  }
+}
+
+@media screen and (min-width: 1366px){
+  /*Header*/
+
+  #header-logo {
+    /* top: -0.5rem; */
+    width: 13%;
+    left: 36rem;
+  }
+
+  /*Albuns*/
+
+  .music-list {
+    left: 48rem;
+    width: 40%;
   }
 }
 
@@ -306,7 +319,7 @@
   /*Albuns*/
 
   .music-list {
-    left: 52rem;
+    left: 49rem;
   }
 
   .album-card {
@@ -341,8 +354,8 @@
   /*Albuns*/
 
   .music-list {
-    width: 10%;
-    left: 63rem;
+    width: 40%;
+    left: 52rem;
   }
 
   .album-card {
@@ -366,8 +379,7 @@
   /*Albuns*/
 
   .music-list {
-    width: 10%;
-    left: 70rem;
+   left: 63rem;
   }
 
   .album-card {
